@@ -55,7 +55,7 @@ class HistogramEngine {
         val maxCount = (lumaBins.maxOrNull() ?: 1).toFloat()
 
         return (0 until binCount).map { index ->
-            val height = (lumaBins[index].toFloat() / maxCount).coerceIn(0.05f, 1.0f)
+            val barHeight = (lumaBins[index].toFloat() / maxCount).coerceIn(0.05f, 1.0f)
             val color = when {
                 index < binCount / 3 -> Color(0xFF34C759) // Shadows
                 index < binCount * 2 / 3 -> Color(0xFFFFCC00) // Midtones
@@ -63,7 +63,7 @@ class HistogramEngine {
             }
             HistogramBarData(
                 id = index,
-                height = height,
+                height = barHeight,
                 color = color
             )
         }

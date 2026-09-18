@@ -78,7 +78,6 @@ fun ProVideoDrawer(
             ) {
                 // ISO Tab
                 ProTabItem(
-                    tab = ProVideoParameterTab.ISO,
                     title = "ISO",
                     valueString = if (isAutoISO) "AUTO" else "${currentISO.toInt()}",
                     isAuto = isAutoISO,
@@ -88,7 +87,6 @@ fun ProVideoDrawer(
 
                 // Shutter Tab
                 ProTabItem(
-                    tab = ProVideoParameterTab.SHUTTER,
                     title = "SEC",
                     valueString = if (isAutoShutter) "AUTO" else "1/${currentShutter}s",
                     isAuto = isAutoShutter,
@@ -98,7 +96,6 @@ fun ProVideoDrawer(
 
                 // EV Tab
                 ProTabItem(
-                    tab = ProVideoParameterTab.APERTURE_EV,
                     title = "EV",
                     valueString = if (isAutoEV) "0.0 EV" else String.format("%+.1f EV", currentEV),
                     isAuto = isAutoEV,
@@ -108,7 +105,6 @@ fun ProVideoDrawer(
 
                 // WB Tab
                 ProTabItem(
-                    tab = ProVideoParameterTab.WB,
                     title = "WB",
                     valueString = if (isAutoWB) "AWB" else "${currentKelvin}K",
                     isAuto = isAutoWB,
@@ -118,7 +114,6 @@ fun ProVideoDrawer(
 
                 // Focus Tab
                 ProTabItem(
-                    tab = ProVideoParameterTab.FOCUS,
                     title = "FOCUS",
                     valueString = if (isAutoFocus) "AF" else "MF ${(currentFocus * 100).toInt()}",
                     isAuto = isAutoFocus,
@@ -256,7 +251,6 @@ fun ProVideoDrawer(
 
 @Composable
 private fun ProTabItem(
-    tab: ProVideoParameterTab,
     title: String,
     valueString: String,
     isAuto: Boolean,

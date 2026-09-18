@@ -64,9 +64,9 @@ class CompositionCalculator {
         // Auto-zoom recommendation
         val isGroup = detection.faceRectangles.size > 1
         detection.dominantSubjectRect?.let { dominant ->
-            recommendedZoom = computeOptimalZoom(dominant, currentZoom, isGroup)
+            recommendedZoom = computeOptimalZoom(dominant, isGroup)
         } ?: detection.faceRectangles.firstOrNull()?.let { face ->
-            recommendedZoom = computeOptimalZoom(face, currentZoom, isGroup)
+            recommendedZoom = computeOptimalZoom(face, isGroup)
         }
 
         val dx = targetPoint.x - center.x
@@ -176,7 +176,7 @@ class CompositionCalculator {
         return Pair(nearest, "Đưa tâm trắng vào tiêu điểm xoắn ốc Fibonacci gần chủ thể nhất")
     }
 
-    private fun computeOptimalZoom(subjectRect: RectF, currentZoom: Float, isGroup: Boolean = false): Float {
+    private fun computeOptimalZoom(subjectRect: RectF, isGroup: Boolean = false): Float {
         if (isGroup) return 1.0f
         val subjectArea = subjectRect.width() * subjectRect.height()
         return when {

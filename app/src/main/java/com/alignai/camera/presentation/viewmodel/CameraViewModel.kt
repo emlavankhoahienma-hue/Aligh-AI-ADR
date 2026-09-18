@@ -165,7 +165,7 @@ class CameraViewModel(application: Application) : AndroidViewModel(application) 
         }
 
         // Setup Spatial Engine callback
-        SpatialTrackingEngine.shared.onSpatialTargetUpdated = { point, confidence, quality ->
+        SpatialTrackingEngine.shared.onSpatialTargetUpdated = { point, _, quality ->
             _trackingQuality.value = quality
             if (_aiSessionState.value is AISessionState.TargetPlaced || _aiSessionState.value is AISessionState.AlignmentPerfect) {
                 _currentTargetPoint.value = point
