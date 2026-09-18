@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="amber_accent">#FFFFCC00</color>
+    <color name="dark_background">#FF0D0E11</color>
+    <color name="glass_card">#801E2024</color>
+    <color name="green_aligned">#FF34C759</color>
+</resources>

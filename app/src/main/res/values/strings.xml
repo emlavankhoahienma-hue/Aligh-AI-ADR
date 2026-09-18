@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AlignAI Studio</string>
+    <string name="camera_permission_required">Cần cấp quyền truy cập Camera và Micro để sử dụng ứng dụng.</string>
+    <string name="grant_permission">Cấp quyền</string>
+</resources>
